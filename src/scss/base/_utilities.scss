@@ -1,0 +1,27 @@
+.mt-sm {
+    margin-top: 4rem !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center-item {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.color-green {
+    color: var(--color-text-tertiary-1) !important;
+}
+
+.color-purple {
+    color: var(--color-text-tertiary-2) !important;
+}
+
+.logo {
+    font-size: 2.4rem;
+    font-family: 'Lobster', cursive;
+    font-weight: 500;
+}

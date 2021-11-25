@@ -1,0 +1,76 @@
+:root {
+    --color-text-dark: 10, 9, 10;
+    --color-text-primary: 20, 16, 17;
+    --color-background-secondary: white;
+    --color-background-tertiary: 29, 248, 252;
+    --color-link: 230, 56, 85;
+    --shadow-light: 0 2rem 5rem rgba(9, 1, 1, .1);
+    --color-btn-primary: rgb(91, 11, 188);
+    --color-text-tertiary-1: rgb(4, 167, 4);
+    --color-text-tertiary-2: rgb(162, 12, 162);
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(phone) { // width < 900?
+        font-size: 48%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+
+
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Lato';
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background-secondary);
+   
+    a {
+        outline: none !important;
+        text-decoration: none !important;
+    }
+    
+}
+
+body::-webkit-scrollbar {
+    width: .8em;
+    border-radius: 5rem;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(101, 98, 98);
+    outline: 1px solid rgb(0, 0, 0);
+    border-radius: 5rem;
+  }
+  
+

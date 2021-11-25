@@ -1,0 +1,79 @@
+.landingpage__navigation {
+    overflow-x: hidden;
+    &--list {
+        display: flex;
+        width: 100%;
+        list-style: none; 
+        padding: 0rem 0rem;
+        font-size: 1.3rem;
+
+        li {
+            padding: 2rem 0rem;
+            font-weight: 500;
+        }
+    }
+    &--logo {
+        width: 35%;
+        font-size: 2.4rem;
+        padding: 3rem 2rem;
+        font-family: 'Lobster', cursive;
+       
+        &-background {
+            background-color: rgba(var(--color-background-tertiary), .05);
+            width: 50rem;
+            position: absolute;
+            width: 425.98px;
+            height: 485.98px;
+            z-index: -5;
+            left: 0rem;
+            top: 0rem;
+            // clip-path: polygon(50% 0%, 100% 39%, 82% 100%, 18% 100%, 0% 38%);
+            border-radius: 85px;
+            transform: rotate(-32.28deg);
+       
+       
+            transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);
+        }
+        span {
+            text-shadow: .5rem .4rem #e4dddd;
+            font-weight: 500;
+            letter-spacing: .1rem;
+          
+           
+        }
+     
+      
+    }
+
+    &--auth {
+        display: flex;
+        list-style: none;
+        position: absolute;
+        position: absolute;
+        right: 0rem;
+        padding: 0rem 4rem;
+
+        li {
+          padding: 1rem 3rem;
+          
+        }
+        &-signup {
+            background-color: var(--color-btn-primary);
+            color: var(--color-background-secondary);
+            box-shadow: var(--shadow-light);
+            cursor: pointer;
+        }
+    }
+}
+
+.navigation__item {
+    padding: 3rem 3rem !important;
+
+    .navigation__link {
+        color: rgba(var(--color-text-dark), 1);
+
+        &--active {
+           
+        }
+    }
+}
