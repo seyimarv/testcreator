@@ -1,23 +1,53 @@
+@import "../../scss/abstracts/mixins";
+
 .landingpage__navigation {
-    overflow-x: hidden;
+    overflow: hidden;
+
+
+
+    @include respond(phone) {
+        position: absolute;
+        height: 100%;
+        z-index: 10;
+        width: 100%;
+
+    }
+
     &--list {
         display: flex;
         width: 100%;
-        list-style: none; 
+        list-style: none;
         padding: 0rem 0rem;
         font-size: 1.3rem;
+        height: 100%;
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+
+            justify-content: center;
+            font-size: 2.5rem;
+        }
 
         li {
             padding: 2rem 0rem;
             font-weight: 500;
         }
     }
+
     &--logo {
         width: 35%;
         font-size: 2.4rem;
         padding: 3rem 2rem;
         font-family: 'Lobster', cursive;
-       
+
+        @include respond(phone) {
+            position: absolute;
+            top: 0rem;
+            left: 2rem;
+        }
+
         &-background {
             background-color: rgba(var(--color-background-tertiary), .05);
             width: 50rem;
@@ -29,20 +59,25 @@
             top: 0rem;
             // clip-path: polygon(50% 0%, 100% 39%, 82% 100%, 18% 100%, 0% 38%);
             border-radius: 85px;
-            transform: rotate(-32.28deg);
-       
-       
+            
+
+
             transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);
+
+            @include respond(phone) {
+                display: none;
+            }
         }
+
         span {
             text-shadow: .5rem .4rem #e4dddd;
             font-weight: 500;
             letter-spacing: .1rem;
-          
-           
+
+
         }
-     
-      
+
+
     }
 
     &--auth {
@@ -53,27 +88,44 @@
         right: 0rem;
         padding: 0rem 4rem;
 
-        li {
-          padding: 1rem 3rem;
-          
+        @include respond(phone) {
+            position: static;
+            flex-direction: column;
+            padding: 0rem;
         }
+
+
+        li {
+            padding: 1rem 3rem;
+
+        }
+
         &-signup {
             background-color: var(--color-btn-primary);
             color: var(--color-background-secondary);
             box-shadow: var(--shadow-light);
             cursor: pointer;
+
+
+            @include respond(phone) {
+                font-size: 2.5rem !important;
+                border-radius: 10rem !important;
+                margin-top: 2rem;
+            }
         }
     }
+
 }
 
 .navigation__item {
     padding: 3rem 3rem !important;
 
+    @include respond(phone) {
+        padding: 3rem 0rem !important;
+    }
+
     .navigation__link {
         color: rgba(var(--color-text-dark), 1);
 
-        &--active {
-           
-        }
     }
 }

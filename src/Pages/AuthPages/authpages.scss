@@ -1,0 +1,68 @@
+@import "../../scss/abstracts/mixins";
+
+.authpage {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+
+    &__description {
+        width: 35%;
+        background-image: radial-gradient(circle, #0d5dd6, #1c56ca, #244fbf, #2949b3, #2c42a8);
+        height: 100%;
+        color: rgb(249, 242, 242);
+        padding: 20rem 6rem;
+
+        .logo {
+            position: absolute;
+            top: 2rem;
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
+
+        .text-md {
+            font-size: 2rem;
+        }
+
+        .text-lg {
+            font-weight: 600;
+            font-size: 4rem;
+        }
+    }
+
+    &__form {
+        margin: 10rem 10rem;
+        flex-grow: 1;
+
+        @include respond(phone) {
+            margin: 10rem 3rem;
+        }
+
+        &-text {
+            max-width: 60%;
+
+            @include respond(tab-land) {
+                max-width: 80%;
+            }
+
+            .text-md {
+                font-weight: 600;
+            }
+
+            .text-sm {
+                margin-top: 1rem;
+                font-weight: 200;
+            }
+        }
+
+        &-flex {
+            display: flex;
+            width: 100%;
+
+            :first-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
