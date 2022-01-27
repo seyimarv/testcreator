@@ -4,7 +4,13 @@ import * as Yup from "yup";
 import { MyTextInput } from "../../Components/Forminput/Forminput";
 import Button from "@mui/material/Button";
 import "./authpages.scss";
+// import { signUpUser } from "../../services/user.services";
+import { useMutation } from "react-query"
+import {API} from '../../utils/Api-constants'
+import axios from 'axios'
+import { useAuthUser } from "../../services/user.services";
 const SignupForm = () => {
+  const mutation = useAuthUser('signup', API.SIGN_UP_API)
   return (
     <Formik
       initialValues={{
@@ -31,11 +37,16 @@ const SignupForm = () => {
         ),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
+         const {mutate, isLoading} = mutation
+         mutate(values)
+         if(isLoading) {
+           setSubmitting(true)
+           console.log('loadddiiinggg')
+         } else {
+           setSubmitting(false)
+         }
+  
+      }}    
     >
       <div className="authpage">
         <div className="authpage__description">
@@ -92,6 +103,7 @@ const SignupForm = () => {
           <Button style={{
               marginTop: '1rem'
           }}
+          disabled={mutation.isLoading}
           type='submit'
           size="large" variant="contained">
             Create Account
