@@ -30,9 +30,13 @@ const LandingpageHeaderItems: readonly navigationItems[] = [
 ];
 
 const Header = () => {
-  const [openHeader, setOpenHeader] = useState(false)
+  const [openHeader, setOpenHeader] = useState('')
   const toggleHeader = () => {
-    setOpenHeader(!openHeader)
+    if(openHeader === 'open') {
+      setOpenHeader('close')
+      return;
+    } 
+    setOpenHeader('open')
   }
   return (
     <div className="landingpage__navigation">
@@ -42,7 +46,7 @@ const Header = () => {
           <MenuIcon className="landingpage__navigation-toggle" onClick={toggleHeader} />
         
         </li>
-        <div className={` ${openHeader ? 'show-navigation' : 'hide-navigation'} landingpage__navigation--list`}>
+        <div className={` ${openHeader === 'open' ? 'show-navigation' : openHeader=== 'close' ? 'hide-navigation' : ''} landingpage__navigation--list`}>
         {LandingpageHeaderItems.map((item, i) => {
           return (
             <NavigationItems key={i} itemName={item.name} path={item.path} />

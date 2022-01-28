@@ -1,16 +1,15 @@
 @import "../../scss/abstracts/mixins";
 
 .landingpage__navigation {
-    overflow-x: hidden;
     display: flex;
     list-style: none;
-
+    position: relative;
 
     &-toggle {
-        display: none;
+        display: none !important;
 
         @include respond(phone) {
-            display: inline;
+            display: inline !important;
             position: absolute;
             right: 2rem;
             font-size: 4rem !important;
@@ -19,13 +18,9 @@
     }
 
     @include respond(phone) {
-        height: 100%;
         z-index: 10;
         width: 100%;
         flex-direction: column;
-
-
-
 
     }
 
@@ -35,8 +30,7 @@
         list-style: none;
         padding: 0rem 0rem;
         font-size: 1.5rem;
-        height: 100%;
-
+     
         @include respond(phone) {
             flex-direction: column;
             align-items: center;
@@ -57,7 +51,7 @@
 
     .show-navigation {
         @include respond(phone) {
-            height: 100%;
+            height: 100vh;
             opacity: 1;
             animation-name: dropdown;
             animation-duration: 1s;
@@ -66,7 +60,7 @@
 
     .hide-navigation {
         @include respond(phone) {
-            height: 0%;
+            height: 0vh;
             opacity: 0;
             animation-name: closedropdown;
             animation-duration: 1s;
@@ -75,9 +69,10 @@
 
     &--logo {
         width: 35%;
-        font-size: 2.4rem;
-        padding: 3rem 2rem;
+        font-size: 3.4rem;
+        padding: 2rem 1rem;
         font-family: 'Lobster', cursive;
+        overflow-x: hidden;
 
         @include respond(phone) {
             top: 0rem;
@@ -88,16 +83,16 @@
 
         &-background {
             background-color: rgba(var(--color-background-tertiary), .05);
-            width: 50rem;
             position: absolute;
-            width: 425.98px;
-            height: 485.98px;
+            width: 42.5rem;
+            height: 48.5rem;
             z-index: -5;
             left: 0rem;
             top: 0rem;
             border-radius: 85px;
             transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);
 
+           
         }
 
         span {
@@ -163,24 +158,24 @@
 
 @keyframes dropdown {
     0% {
-        height: 0%;
+        height: 0vh;
         opacity: 1
     }
 
     100% {
-        height: 100%;
+        height: 100vh;
         opacity: 1
     }
 }
 
 @keyframes closedropdown {
     0% {
-        height: 100%;
+        height: 100vh;
         opacity: 1
     }
 
     100% {
-        height: 0%;
+        height: 0vh;
         opacity: 0%
     }
 }
