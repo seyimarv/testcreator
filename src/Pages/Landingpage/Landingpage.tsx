@@ -11,10 +11,14 @@ import EmployerImage from "../../images/employer.svg";
 import CreateTest from "../../images/createExam.jpg";
 import manageExam from "../../images/manageExam.jpg";
 import attemptExam from "../../images/attemptTest.jpg";
+import { Link } from "react-router-dom";
+import { useLogOutUser } from "../../services/user.services";
 const Landingpage = () => {
+  const logOut = useLogOutUser()
   return (
     <div className="landingpage">
       <Header />
+      <h1 onClick={logOut}>LOGOUT</h1>
       <section className="landingpage__firstsection">
         <section className="landingpage__firstsection--text">
           <p className="text-lg">
@@ -25,7 +29,7 @@ const Landingpage = () => {
             create your test, share it, and get results almost instantly. we
             help you grade and analyze the scores.
           </p>
-          <a className="btn-primary mt-sm">GET STARTED</a>
+          <Link to='/signup' className="btn-primary mt-sm">GET STARTED</Link>
         </section>
         <div className="landingpage__firstsection--images">
           <img src={StudentImage} alt="" />

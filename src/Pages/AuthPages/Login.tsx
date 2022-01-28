@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import "./authpages.scss";
 import { useAuthUser} from "../../services/user.services";
 import { API } from "../../utils/Api-constants";
+import { Link } from "react-router-dom";
 const LoginForm = () => {
   const mutation = useAuthUser('login', API.LOGIN_API)
   return (
@@ -77,7 +78,7 @@ const LoginForm = () => {
             Log in
           </Button>
           <p className="text-md mt-sm">
-            Yet to open an account? <a href="">Sign up</a>
+            Yet to open an account? <Link to='/signup'>Sign up</Link>
           </p>
         </Form>
       </div>

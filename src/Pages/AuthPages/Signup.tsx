@@ -4,10 +4,8 @@ import * as Yup from "yup";
 import { MyTextInput } from "../../Components/Forminput/Forminput";
 import Button from "@mui/material/Button";
 import "./authpages.scss";
-// import { signUpUser } from "../../services/user.services";
-import { useMutation } from "react-query"
+import { Link } from "react-router-dom";
 import {API} from '../../utils/Api-constants'
-import axios from 'axios'
 import { useAuthUser } from "../../services/user.services";
 const SignupForm = () => {
   const mutation = useAuthUser('signup', API.SIGN_UP_API)
@@ -109,7 +107,7 @@ const SignupForm = () => {
             Create Account
           </Button>
           <p className="text-md mt-sm">
-            Already have an account? <a href="">Log in</a>
+            Already have an account? <Link to='/login'>Log in</Link>
           </p>
         </Form>
       </div>

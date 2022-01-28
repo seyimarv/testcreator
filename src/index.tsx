@@ -3,27 +3,23 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
+import { QueryClient, QueryClientProvider } from "react-query";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
-
-const queryClient = new QueryClient()
+import { BrowserRouter } from "react-router-dom";
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
-      <QueryClientProvider client={queryClient}>
-        <App />
-        </QueryClientProvider>
-      </PersistGate>
+      <BrowserRouter>
+        <PersistGate persistor={persistor}>
+          <QueryClientProvider client={queryClient}>
+            <App />
+          </QueryClientProvider>
+        </PersistGate>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

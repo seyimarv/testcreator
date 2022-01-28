@@ -18,4 +18,8 @@ const rootReducer = combineReducers({
     
 })
 
+export type RootState = ReturnType<typeof rootReducer>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+
+
 export default  persistReducer(persistConfig, rootReducer)

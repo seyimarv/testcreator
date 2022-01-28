@@ -18,7 +18,7 @@
         width: 100%;
         list-style: none;
         padding: 0rem 0rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         height: 100%;
 
         @include respond(phone) {
@@ -59,7 +59,7 @@
             top: 0rem;
             // clip-path: polygon(50% 0%, 100% 39%, 82% 100%, 18% 100%, 0% 38%);
             border-radius: 85px;
-            
+
 
 
             transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);

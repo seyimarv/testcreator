@@ -3,8 +3,9 @@ import axios from "axios";
 import { loginUserType, postUserType} from "../types/Types";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../redux/user/user.actions";
+import { useNavigate } from "react-router-dom";
 
-export const useAuthUser = (type: string, API: any) => {
+export const useAuthUser = (type: string, API: string) => {
     const dispatch = useDispatch()
     const  authFunc = async (values: loginUserType | postUserType) => {
        let response; 
@@ -29,7 +30,6 @@ export const useAuthUser = (type: string, API: any) => {
               return;
           }
           if(error.response.status === 401) {
-              console.log(error.response)
               alert( error.response.data.message )
               return;
           }
@@ -41,4 +41,16 @@ export const useAuthUser = (type: string, API: any) => {
       },
     });
     return mutation;
+}
+
+
+export const useLogOutUser = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const logout = () => {
+    dispatch(setCurrentUser(null))
+    navigate('/')
+  }
+  return logout;
+ 
 }
