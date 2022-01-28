@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
+import MenuIcon from '@mui/icons-material/Menu';
 
 type navigationItems = {
   name: string;
@@ -32,17 +33,16 @@ const Header = () => {
   const [openHeader, setOpenHeader] = useState(false)
   const toggleHeader = () => {
     setOpenHeader(!openHeader)
-    console.log(openHeader)
   }
   return (
     <div className="landingpage__navigation">
         <li className="landingpage__navigation--logo">
           <div className="landingpage__navigation--logo-background"></div>
           <span>MTest</span>
-          <h1 className="landingpage__navigation-toggle" onClick={toggleHeader}>
-        ToggleHeader</h1>
+          <MenuIcon className="landingpage__navigation-toggle" onClick={toggleHeader} />
+        
         </li>
-        <div className={` ${openHeader ? 'show-navigation' : ''} landingpage__navigation--list`}>
+        <div className={` ${openHeader ? 'show-navigation' : 'hide-navigation'} landingpage__navigation--list`}>
         {LandingpageHeaderItems.map((item, i) => {
           return (
             <NavigationItems key={i} itemName={item.name} path={item.path} />
