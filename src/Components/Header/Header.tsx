@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
 
@@ -29,13 +29,20 @@ const LandingpageHeaderItems: readonly navigationItems[] = [
 ];
 
 const Header = () => {
+  const [openHeader, setOpenHeader] = useState(false)
+  const toggleHeader = () => {
+    setOpenHeader(!openHeader)
+    console.log(openHeader)
+  }
   return (
     <div className="landingpage__navigation">
-      <ul className="landingpage__navigation--list">
         <li className="landingpage__navigation--logo">
           <div className="landingpage__navigation--logo-background"></div>
           <span>MTest</span>
+          <h1 className="landingpage__navigation-toggle" onClick={toggleHeader}>
+        ToggleHeader</h1>
         </li>
+        <div className={` ${openHeader ? 'show-navigation' : ''} landingpage__navigation--list`}>
         {LandingpageHeaderItems.map((item, i) => {
           return (
             <NavigationItems key={i} itemName={item.name} path={item.path} />
@@ -53,7 +60,8 @@ const Header = () => {
             </Link>
           </ul>
         </li>
-      </ul>
+        </div>
+   
     </div>
   );
 };

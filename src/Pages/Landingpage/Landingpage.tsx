@@ -14,11 +14,9 @@ import attemptExam from "../../images/attemptTest.jpg";
 import { Link } from "react-router-dom";
 import { useLogOutUser } from "../../services/user.services";
 const Landingpage = () => {
-  const logOut = useLogOutUser()
   return (
     <div className="landingpage">
       <Header />
-      <h1 onClick={logOut}>LOGOUT</h1>
       <section className="landingpage__firstsection">
         <section className="landingpage__firstsection--text">
           <p className="text-lg">

@@ -1,15 +1,31 @@
 @import "../../scss/abstracts/mixins";
 
 .landingpage__navigation {
-    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    list-style: none;
 
 
+    &-toggle {
+        display: none;
+
+        @include respond(phone) {
+            display: inline;
+            position: absolute;
+            right: 2rem;
+            font-size: 1.7rem;
+
+        }
+    }
 
     @include respond(phone) {
-        position: absolute;
         height: 100%;
         z-index: 10;
         width: 100%;
+        flex-direction: column;
+
+
+
 
     }
 
@@ -25,14 +41,23 @@
             flex-direction: column;
             align-items: center;
             background-color: white;
-
+            top: 0;
+            position: absolute;
             justify-content: center;
             font-size: 2.5rem;
+            height: 0%;
+            opacity: 0;
         }
 
         li {
             padding: 2rem 0rem;
             font-weight: 500;
+        }
+    }
+    .show-navigation {
+        @include respond(phone) {
+            height: 100%;
+            opacity: 1
         }
     }
 
@@ -43,9 +68,10 @@
         font-family: 'Lobster', cursive;
 
         @include respond(phone) {
-            position: absolute;
             top: 0rem;
-            left: 2rem;
+            z-index: 12;
+            width: 100%;
+            height: 100%;
         }
 
         &-background {
@@ -64,9 +90,6 @@
 
             transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);
 
-            @include respond(phone) {
-                display: none;
-            }
         }
 
         span {
