@@ -8,10 +8,24 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/root-reducer";
 import ProtectedRoute from "./Components/Protectedroute/protectedroute";
 import DashboardPage from "./Pages/DashboardPage/Dashboardpage";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
   return (
+    <>
+        <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
     <Routes>
       <Route path="/" element={<Landingpage />} />
       <Route
@@ -26,6 +40,7 @@ function App() {
         <Route path="/Dashboard" element={<DashboardPage />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

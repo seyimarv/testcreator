@@ -16,6 +16,7 @@ ReactDOM.render(
       <BrowserRouter>
         <PersistGate persistor={persistor}>
           <QueryClientProvider client={queryClient}>
+        
             <App />
           </QueryClientProvider>
         </PersistGate>
