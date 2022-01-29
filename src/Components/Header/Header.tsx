@@ -2,16 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
 import MenuIcon from '@mui/icons-material/Menu';
+import { navigationProps,navigationItems } from "../../types/Types";
 
-type navigationItems = {
-  name: string;
-  path: any;
-};
-
-type navigationProps = {
-  itemName: string;
-  path: string;
-};
 export const NavigationItems = ({ itemName, path }: navigationProps) => {
   return (
     <li className="navigation__item">

@@ -1,3 +1,20 @@
+import React from "react";
+
+export type navigationItems = {
+    name: string;
+    path:  string;
+    icon?: React.ReactNode
+  };
+  
+  export type navigationProps = {
+    itemName: string;
+    path: string;
+    Icon?: React.ReactNode;
+  };
+
+
+
+
 export interface userType {
     token: string,
     userId: string,

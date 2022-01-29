@@ -3,7 +3,6 @@ import Header from "../../Components/Header/Header";
 import "./Landingpage.scss";
 import AnalyzeImage from "../../images/analyzeimage.jpg";
 import ExamImage from "../../images/exams.jpg";
-import Button from "@mui/material/Button";
 import TeacherImage from "../../images/teacher.svg";
 import StudentImage from "../../images/student.jpg";
 import Student from "../../images/student.svg";
@@ -12,7 +11,7 @@ import CreateTest from "../../images/createExam.jpg";
 import manageExam from "../../images/manageExam.jpg";
 import attemptExam from "../../images/attemptTest.jpg";
 import { Link } from "react-router-dom";
-import { useLogOutUser } from "../../services/user.services";
+
 const Landingpage = () => {
   return (
     <div className="landingpage">
