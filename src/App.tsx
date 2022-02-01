@@ -10,6 +10,7 @@ import ProtectedRoute from "./Components/Protectedroute/protectedroute";
 import DashboardPage from "./Pages/DashboardPage/Dashboardpage";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import  DialogBox  from "./Components/dialog-box/dialog-box";
 
 function App() {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
@@ -26,8 +27,9 @@ function App() {
               draggable
               pauseOnHover
             />
+            <DialogBox />
     <Routes>
-      <Route path="/" element={<Landingpage />} />
+      <Route path="/" element={currentUser ? <Navigate to="/Dashboard" /> : <Landingpage />}/>
       <Route
         path="/login"
         element={currentUser ? <Navigate to="/Dashboard" /> : <LoginForm />}

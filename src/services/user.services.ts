@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../redux/user/user.actions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { toggleDialogBox } from "../redux/dialogbox/dialogbox.actions";
 
 export const useAuthUser = (type: string, API: string) => {
   const dispatch = useDispatch();
@@ -47,9 +48,16 @@ export const useAuthUser = (type: string, API: string) => {
 export const useLogOutUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const logout = () => {
+  const logOutFunc = () => {
     dispatch(setCurrentUser(null));
-    navigate("/");
+    navigate("/")
+  }
+  const logout = () => {
+  dispatch(toggleDialogBox({
+    Question: 'Are you want to sure you want to logout?',
+    fn: logOutFunc
+  }))
+   
   };
   return logout;
 };

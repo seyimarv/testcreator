@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage' //using localstorage
+import { dialogBoxReducer } from "./dialogbox/dialog.reducer";
 import { userReducer } from "./user/user.reducer";
 
 
@@ -14,7 +15,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  dialog: dialogBoxReducer
     
 })
 

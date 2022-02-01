@@ -8,21 +8,21 @@
 
 
    &-image {
-    height: 18rem;
-    margin: 5rem 0rem;
+    height: 16rem;
+    margin: 4rem 0rem;
 }
 
 }
 .sidebar-item {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     display: flex;
-    padding:  1.5rem;
+    padding:  1.3rem;
     color: rgba(244, 244, 244, 0.9);
     border-radius: 0.4rem;
     transition: all .5s;
 
     .MuiSvgIcon-root {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: rgba(249, 240, 240, 0.4);
     }
 
@@ -44,6 +44,12 @@
         .MuiSvgIcon-root {
             color: rgba(244, 244, 244, 1);
         }
+
     }
+    &__logout {
+        font-size: 0.9rem;
+        letter-spacing: .1rem;
+    }
+   
 
 }
