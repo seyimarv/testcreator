@@ -11,6 +11,7 @@ import DashboardPage from "./Pages/DashboardPage/Dashboardpage";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import  DialogBox  from "./Components/dialog-box/dialog-box";
+import CreateTest from "./Components/Create-test/Create-test";
 
 function App() {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
@@ -39,7 +40,7 @@ function App() {
         element={currentUser ? <Navigate to="/Dashboard" /> : <SignupForm />}
       />
       <Route path="/Dashboard" element={<ProtectedRoute />}>
-        <Route path="/Dashboard" element={<DashboardPage />} />
+        <Route path="/Dashboard" element={<CreateTest />} />
       </Route>
     </Routes>
     </>

@@ -17,7 +17,6 @@ export const MyTextInput = ({ label, ...props }) => {
         fullWidth
         error={meta.touched && meta.error}
         size='small'
-        required
         id="outlined-required"
         label={label}
         defaultValue="Hello World"

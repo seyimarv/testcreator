@@ -1,5 +1,14 @@
 @import "../../scss/abstracts/mixins";
 
+
+.logo-text {
+    text-shadow: .5rem .4rem #e4dddd;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    font-family: 'Lobster', cursive;
+    font-size: 3.4rem;
+}
+
 .landingpage__navigation {
     display: flex;
     list-style: none;
@@ -30,7 +39,7 @@
         list-style: none;
         padding: 0rem 0rem;
         font-size: 1.5rem;
-     
+
         @include respond(phone) {
             flex-direction: column;
             align-items: center;
@@ -71,7 +80,6 @@
         width: 35%;
         font-size: 3.4rem;
         padding: 2rem 0.8rem;
-        font-family: 'Lobster', cursive;
         overflow-x: hidden;
 
         @include respond(phone) {
@@ -92,16 +100,10 @@
             border-radius: 85px;
             transform: rotate(-25deg) translateX(-5rem) translateY(-27rem);
 
-           
-        }
-
-        span {
-            text-shadow: .5rem .4rem #e4dddd;
-            font-weight: 500;
-            letter-spacing: .1rem;
-
 
         }
+
+
 
 
     }

@@ -38,7 +38,7 @@ const SidebarItem = ({ itemName, path, Icon }: navigationProps) => {
 };
 
 const Sidebar = () => {
-  const logOut = useLogOutUser()
+  const logOut = useLogOutUser();
   return (
     <div className="sidebar">
       {sidebarItems.map((item, i) => {
@@ -58,7 +58,7 @@ const Sidebar = () => {
         <Box mr={4} mt={0.5}>
           <LogoutIcon />
         </Box>
-        <h1 >Logout</h1>
+        <h1>Logout</h1>
       </div>
     </div>
   );
