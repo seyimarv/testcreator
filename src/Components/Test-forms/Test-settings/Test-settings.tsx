@@ -19,50 +19,7 @@ const TestSettings = ({
 }) => {
   return (
     <Box margin="5rem 10rem">
-
-      <h1 style={{
-        marginBottom: '4rem'
-      }}>Test Settings</h1>
-      <MyTextInput label="Test Title" name="Title" type="text" placeholder="" required />
-      <MyTextInput
-        label="Test instructions"
-        name="Instructions"
-        type="text"
-        placeholder=""
-        required
-      />
-      <Box className="authpage__form-flex">
-        <MyTextInput
-          label="Number of takes allowed"
-          name="NoOfTakesAllowed"
-          type="number"
-          placeholder=""
-          required
-        />
-
-        <MyTextInput
-          label="Time Limit in Minutes"
-          name="TimeLimit"
-          type="number"
-          placeholder=""
-          required
-        />
-      </Box>
-      <Box className="authpage__form-flex">
-        <MyTextInput
-          label="password"
-          name="password"
-          type="password"
-          placeholder=""
-        />
-        <MyTextInput
-          label="confirmPassword"
-          name="confirmPassword"
-          type="password"
-          placeholder=""
-        />
-      </Box>
-     
+      <h1>Test settings</h1>
     </Box>
   );
 };
