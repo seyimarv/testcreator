@@ -28,7 +28,7 @@ export const useAuthUser = (type: string, API: string) => {
     },
     onError: (error: any) => {
       if (!error.response) {
-        toast.error("An error occured, Please check your network connection");
+        toast.error("An error occured, Please check your network connectio");
         return;
       }
       if (error.response.status === 401) {

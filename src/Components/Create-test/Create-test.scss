@@ -1,0 +1,13 @@
+.create-test-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .active {
+        color: red;
+    }
+
+    &__step {
+
+    }
+}
