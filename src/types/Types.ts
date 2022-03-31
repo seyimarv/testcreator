@@ -32,6 +32,6 @@ export interface postUserType {
 
 export interface loginUserType {
    email: string,
-   password: string
+   password: string,
 }
 
